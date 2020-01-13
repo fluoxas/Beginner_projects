@@ -1,5 +1,5 @@
 # Beginner Python projects
-This is a beginner github repo to showcase my skill improvement overtime.
+This is a beginner github repo to showcase skill improvement overtime.
 feel free to contact me with tips or advice.
 
 ## project list and location
