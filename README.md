@@ -3,7 +3,7 @@ This is a beginner github repo to showcase skill improvement overtime.
 feel free to contact me with tips or advice.
 
 ## project list and location
-1. [Rock Paper Scissors Game (CLI)](https://github.com/fluoxas/Beginner_projects/rock_paper_scissors) 
+1. [Rock Paper Scissors Game (CLI)](https://github.com/fluoxas/Beginner_projects/tree/master/rock_paper_scissors) 
 
 
 ## dependencies
