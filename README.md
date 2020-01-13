@@ -9,4 +9,4 @@ feel free to contact me with tips or advice.
 * [python 3.6](https://www.python.org/downloads/) or higher
 
 ## License
-[License](https://github.com/fluoxas/Beginner_projects/blob/master/LICENSE)
+* [License](https://github.com/fluoxas/Beginner_projects/blob/master/LICENSE)
