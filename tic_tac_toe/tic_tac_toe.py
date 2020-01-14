@@ -13,6 +13,13 @@ player2 = 0
 # main game loop
 while True:
     print(f'Player 1 W: {player1}\nPlayer 2 W: {player2}\n')
+    
+    # check for winner and add points
+    winner = gl.check_win()
+    if winner == 'p1':
+        player1 += 1
+    if winner == 'p2':
+        player2 += 1
 
     # input loop
     while True:
