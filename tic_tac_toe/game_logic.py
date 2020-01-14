@@ -90,6 +90,10 @@ def check_rows():
         pass
     elif grid[2][0] == ' O ' and grid[2][2] == ' O ' and grid[2][4] == ' O ':
         pass
+    elif grid[4][0] == ' X ' and grid[4][2] == ' X ' and grid[4][4] == ' X ':
+        pass
+    elif grid[4][0] == ' O ' and grid[4][2] == ' O ' and grid[4][4] == ' O ':
+        pass
 
 def check_diag():
     """check all diagnols for winner"""
