@@ -35,6 +35,7 @@ def print_grid():
 
 def reset_board():
     """reset board to play again"""
+    pass
 
 def move_placement(location):
     """Prints X on location given"""
@@ -63,49 +64,75 @@ def display_rules():
         print(f'{i}. {rule}')
 
 def check_win():
-    """check to see if player has won"""
-    pass
+    """check to see if player has won and add score to winner"""
+    result_col = check_columns()
+    result_diag = check_diag()
+    result_row = check_rows()
+
+    if result_col:
+        if result_col == 'X':
+            return 'p1'
+        else:
+            return 'p2'
+    
+    if result_diag:
+        if result_diag == 'X':
+            return 'p1'
+        else:
+            return 'p2'
+    
+    if result_row:
+        if result_row == 'X':
+            return 'p1'
+        else:
+            return 'p2'
 
 def check_rows():
     """check all rows on board for winner"""
     if grid[0][0] == ' X ' and grid[0][2] == ' X ' and grid[0][4] == ' X ':
-        pass
+        return 'X'
     elif grid[0][0] == ' O ' and grid[0][2] == ' O ' and grid[0][4] == ' O ':
-        pass
+        return 'O'
     elif grid[2][0] == ' X ' and grid[2][2] == ' X ' and grid[2][4] == ' X ':
-        pass
+        return 'X'
     elif grid[2][0] == ' O ' and grid[2][2] == ' O ' and grid[2][4] == ' O ':
-        pass
+        return 'O'
     elif grid[4][0] == ' X ' and grid[4][2] == ' X ' and grid[4][4] == ' X ':
-        pass
+        return 'X'
     elif grid[4][0] == ' O ' and grid[4][2] == ' O ' and grid[4][4] == ' O ':
-        pass
+        return 'O'
+    else:
+        return False
 
 def check_columns():
     """check all columns for winner"""
     if grid[0][0] == ' X ' and grid[2][0] == ' X ' and grid[4][0] == ' X ':
-        pass
+        return 'X'
     elif grid[0][0] == ' O ' and grid[2][0] == ' O ' and grid[4][0] == ' O ':
-        pass
+        return 'O'
     elif grid[0][2] == ' X ' and grid[2][2] == ' X ' and grid[4][2] == ' X ':
-        pass
+        return 'X'
     elif grid[0][2] == ' O ' and grid[2][2] == ' O ' and grid[4][2] == ' O ':
-        pass
+        return 'O'
     elif grid[0][4] == ' X ' and grid[2][4] == ' X ' and grid[4][4] == ' X ':
-        pass
+        return 'X'
     elif grid[0][4] == ' O ' and grid[2][4] == ' O ' and grid[4][4] == ' O ':
-        pass
+        return 'O'
+    else:
+        return False
 
 def check_diag():
     """check all diagnols for winner"""
     if grid[0][0] == ' X ' and grid[2][2] == ' X ' and grid[4][4] == ' X ':
-        pass
+        return 'X'
     elif grid[0][0] == ' O ' and grid[2][2] == ' O ' and grid[4][4] == ' O ':
-        pass
+        return 'O'
     elif grid[0][4] == ' X ' and grid[2][2] == ' X ' and grid[4][0] == ' X ':
-        pass
+        return 'X'
     elif grid[0][4] == ' O ' and grid[2][2] == ' O ' and grid[4][0] == ' O ':
-        pass
+        return 'O'
+    else:
+        return False
 
 
 def check_input(command):
