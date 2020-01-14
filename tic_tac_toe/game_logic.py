@@ -12,20 +12,6 @@ grid = [
     [' 7 ', '|', ' 8 ', '|', ' 9 ']
     ]
 
-# check rows
-grid[0][0] and grid[0][2] and grid[0][4]
-grid[2][0] and grid[2][2] and grid[2][4]
-grid[4][0] and grid[4][2] and grid[4][4]
-
-# check collums
-grid[0][0] and grid[2][0] and grid[4][0]
-grid[0][2] and grid[2][2] and grid[4][2]
-grid[0][4] and grid[2][4] and grid[4][4]
-
-# check diagnols
-grid[0][0] and grid[2][2] and grid[4][4]
-grid[0][4] and grid[2][2] and grid[4][0]
-
 template = copy.deepcopy(grid)
 
 rules = [
@@ -93,6 +79,21 @@ def check_rows():
     elif grid[4][0] == ' X ' and grid[4][2] == ' X ' and grid[4][4] == ' X ':
         pass
     elif grid[4][0] == ' O ' and grid[4][2] == ' O ' and grid[4][4] == ' O ':
+        pass
+
+def check_columns():
+    """check all columns for winner"""
+    if grid[0][0] == ' X ' and grid[2][0] == ' X ' and grid[4][0] == ' X ':
+        pass
+    elif grid[0][0] == ' O ' and grid[2][0] == ' O ' and grid[4][0] == ' O ':
+        pass
+    elif grid[0][2] == ' X ' and grid[2][2] == ' X ' and grid[4][2] == ' X ':
+        pass
+    elif grid[0][2] == ' O ' and grid[2][2] == ' O ' and grid[4][2] == ' O ':
+        pass
+    elif grid[0][4] == ' X ' and grid[2][4] == ' X ' and grid[4][4] == ' X ':
+        pass
+    elif grid[0][4] == ' O ' and grid[2][4] == ' O ' and grid[4][4] == ' O ':
         pass
 
 def check_diag():
