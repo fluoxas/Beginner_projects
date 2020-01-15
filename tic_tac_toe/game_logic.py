@@ -12,8 +12,13 @@ grid = [
     [' 7 ', '|', ' 8 ', '|', ' 9 ']
     ]
 
+grid[0][0] = ' X '
+
 template = copy.deepcopy(grid)
 
+
+# need to add mulitplayer
+# need to add ai computer
 rules = [
     'Use 1-9 to enter an x in grid',
     'To Reset board enter R',
@@ -133,7 +138,6 @@ def check_diag():
         return 'O'
     else:
         return False
-
 
 def check_input(command):
     """check user input for command or valid int (1-9)"""
