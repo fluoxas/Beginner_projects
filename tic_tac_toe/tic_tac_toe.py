@@ -18,8 +18,12 @@ while True:
     winner = gl.check_win()
     if winner == 'p1':
         player1 += 1
+        break
     if winner == 'p2':
         player2 += 1
+        break
+
+    gl.print_grid()
 
     # input loop
     while True:
@@ -43,4 +47,13 @@ while True:
             break
 
     # display new game board with player marks
-    gl.check_win()
+    gl.move_placement(player_move)
+
+# need to reset board to loop again without having to break on lines 18-24
+
+if player1 == 1:
+    print("Player 1 win")
+    sys.exit()
+else:
+    print("Player 2 win")
+    sys.exit()
