@@ -46,8 +46,12 @@ while True:
         if type(player_move) == int:
             break
 
-    # display new game board with player marks
-    gl.move_placement(player_move)
+    # display game board with player marks
+    gl.player1_move_placement(player_move)
+
+    # computer move
+    time.sleep(1)
+    gl.computer_move()
 
 # need to reset board to loop again without having to break on lines 18-24
 
