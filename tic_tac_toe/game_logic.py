@@ -3,6 +3,7 @@ This is the game logic behind tic tac toe
 """
 
 import copy
+import random
 
 grid = [
     [' 1 ', '|', ' 2 ', '|', ' 3 '],
@@ -12,7 +13,7 @@ grid = [
     [' 7 ', '|', ' 8 ', '|', ' 9 ']
     ]
 
-grid[0][0] = ' X '
+possible_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 template = copy.deepcopy(grid)
 
@@ -42,26 +43,65 @@ def reset_board():
     """reset board to play again"""
     pass
 
-def move_placement(location):
+def player1_move_placement(location):
     """Prints X on location given"""
     if location == 1:
         grid[0][0] = ' X '
+        possible_moves.remove(1)
     elif location == 2:
         grid[0][2] = ' X '
+        possible_moves.remove(2)
     elif location == 3:
         grid[0][4] = ' X '
+        possible_moves.remove(3)
     elif location == 4:
         grid[2][0] = ' X '
+        possible_moves.remove(4)
     elif location == 5:
         grid[2][2] = ' X '
+        possible_moves.remove(5)
     elif location == 6:
         grid[2][4] = ' X '
+        possible_moves.remove(6)
     elif location == 7:
         grid[4][0] = ' X '
+        possible_moves.remove(7)
     elif location == 8:
         grid[4][2] = ' X '
+        possible_moves.remove(8)
     elif location == 9:
         grid[4][4] = ' X '
+        possible_moves.remove(9)
+
+def player2_move_placement(location):
+    """Prints X on location given"""
+    if location == 1:
+        grid[0][0] = ' O '
+        possible_moves.remove(1)
+    elif location == 2:
+        grid[0][2] = ' O '
+        possible_moves.remove(2)
+    elif location == 3:
+        grid[0][4] = ' O '
+        possible_moves.remove(3)
+    elif location == 4:
+        grid[2][0] = ' O '
+        possible_moves.remove(4)
+    elif location == 5:
+        grid[2][2] = ' O '
+        possible_moves.remove(5)
+    elif location == 6:
+        grid[2][4] = ' O '
+        possible_moves.remove(6)
+    elif location == 7:
+        grid[4][0] = ' O '
+        possible_moves.remove(7)
+    elif location == 8:
+        grid[4][2] = ' O '
+        possible_moves.remove(8)
+    elif location == 9:
+        grid[4][4] = ' O '
+        possible_moves.remove(9)
 
 def display_rules():
     """display rules"""
@@ -138,6 +178,12 @@ def check_diag():
         return 'O'
     else:
         return False
+
+def computer_move():
+    """defines the computers move currently randomly selected
+    latter version will include ai?"""
+    computer = random.choice(possible_moves)
+    player2_move_placement(computer)
 
 def check_input(command):
     """check user input for command or valid int (1-9)"""
